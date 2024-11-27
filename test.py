@@ -2,21 +2,15 @@ import math
 
 
 def solve():
-   n,q = map(int,input().split())
-   a = list(map(int,input().split()))
-   for _ in range(q):
-        l,r,k = map(int,input().split())
-        sum = 0
-        for i in range(n):
-            if i>=l-1 and i<=r-1:
-                sum+=k
-            else:
-                sum+=a[i]
-        if sum%2!=0:
-            print('YES','\n')
-        else:
-            print('NO','\n')
-        
+    n = int(input())
+    a = list(map(int,input().split()))
+
+    total = sum(a)
+    if total%3==0:
+        print(0,'\n')
+    else:
+        print(3*(total//3 + 1) - total,'\n' )
+         
             
 
 def main():
